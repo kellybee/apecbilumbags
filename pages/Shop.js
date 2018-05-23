@@ -9,7 +9,7 @@ import {
 	Image,
 } from "react-native";
 
-export default class History extends Component {
+export default class Shop extends Component {
 
 	render() {
 		return (
@@ -19,10 +19,6 @@ export default class History extends Component {
                                   title="Back"
                                   onPress={() => this.props.navigation.goBack()}
                                 />
-                <Button
-                                                  title="Back"
-                                                  onPress={() => this.props.navigation.goBack()}
-                                                />
                 <Text>TODO: Bilum results</Text>
 			</View>
 		);

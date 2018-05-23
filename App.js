@@ -1,6 +1,13 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
-import { Home, Shop, AboutBilum, Weavers, WeaverProfile } from './pages/index';
+import {
+    Home,
+    Shop,
+    AboutBilum,
+    Weavers,
+    WeaverProfile,
+    OrderStatus
+    } from './pages/index';
 
 const AppNavigator = createStackNavigator(
   {
@@ -9,6 +16,7 @@ const AppNavigator = createStackNavigator(
     AboutBilum: AboutBilum,
     Weavers: Weavers,
     WeaverProfile: WeaverProfile,
+    OrderStatus: OrderStatus,
   },
   {
     initialRouteName: 'Home',

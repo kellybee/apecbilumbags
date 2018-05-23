@@ -4,29 +4,16 @@ import {
     View
     } from 'react-native';
 import TouchPanel from '../components/TouchPanel';
+import {
+           appStyles,
+           appNavigationOptions,
+       } from '../styles/app';
 
-const styles = {
-    container: {
-        flex: 1,
-        flexDirection: 'column',
-        backgroundColor: '#000'
-    },
-    quarterHeight: {
-        flex: 1,
-    },
-    row: {
-        flex: 1,
-        flexDirection: 'row'
-    },
-};
+const styles = appStyles;
 
 class HomeScreen extends React.Component {
-  static navigationOptions = {
+  static navigationOptions = { ...appNavigationOptions,
     title: 'BILUM ORIGINALS',
-    headerStyle: {
-       backgroundColor: '#aaa',
-    },
-    headerTintColor: '#000',
   };
   render() {
     return (
@@ -39,7 +26,7 @@ class HomeScreen extends React.Component {
                     imgSrc={require('../assets/weaver.png')}
                     text="Our weavers"/>
                 <TouchPanel
-                    navigateTo='AboutBilum'
+                    navigateTo='OrderStatus'
                     navigation={this.props.navigation}
                     imgSrc={require('../assets/bilum-2.jpeg')}
                     text="About Bilum"/>
