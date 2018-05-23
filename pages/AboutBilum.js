@@ -16,11 +16,7 @@ export default class History extends Component {
 			<View>
 				<Text>About Bilum. TODO: history, style and patterns</Text>
 				<Button
-                                                  title="view order status page"
-                                                  onPress={() => this.props.navigation.navigate('OrderStatus')}
-                                                />
-                <Button
-                                                  title="view order feedback page"
+                                                  title="view order feedback"
                                                   onPress={() => this.props.navigation.navigate('OrderFeedback')}
                                                 />
 				<Button

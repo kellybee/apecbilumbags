@@ -4,15 +4,12 @@ import {
     View
     } from 'react-native';
 import TouchPanel from '../components/TouchPanel';
-import {
-           appStyles,
-           appNavigationOptions,
-       } from '../styles/app';
+import appStyles from '../styles/app';
 
 const styles = appStyles;
 
 class HomeScreen extends React.Component {
-  static navigationOptions = { ...appNavigationOptions,
+  static navigationOptions = {
     title: 'Bilum Originals',
   };
   render() {

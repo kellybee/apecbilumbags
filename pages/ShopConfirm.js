@@ -8,10 +8,7 @@ import {
 	StyleSheet,
 } from "react-native";
 import WeaverData from '../data/Weavers';
-import {
-           appStyles,
-           appNavigationOptions,
-       } from '../styles/app';
+import appStyles from '../styles/app';
 import {
     ImagePanel,
     TextHeader,
@@ -51,7 +48,6 @@ const styles = {
 
 export default class ShopConfirm extends Component {
     static navigationOptions = {
-        ...appNavigationOptions,
         title: 'Order Status',
       };
 

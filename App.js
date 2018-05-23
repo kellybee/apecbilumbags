@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
+import { Button, Text } from 'react-native';
 import {
     Home,
     Shop,
@@ -12,6 +13,31 @@ import {
     ShopDeliveryDetails,
     ShopConfirm,
     } from './pages/index';
+import Orders from './data/Orders';
+
+class OrderStatusIcon extends React.Component {
+    render() {
+        const orderId = '1';
+        const order = Orders.find(item => item.id === orderId);
+        const navTo = order.status === 'in_progress' ? 'OrderStatus' : 'OrderFeedback';
+        return (
+            <Button
+                title="1"
+                onPress={() => this.props.navigation.navigate(navTo)}
+                 style={{marginRight: 5}}/>
+        )
+    }
+}
+
+const navigationOptions = ({ navigation }) => {
+    return {
+        headerStyle: {
+           backgroundColor: '#aaa',
+        },
+        headerTintColor: '#000',
+        headerRight: <OrderStatusIcon navigation={navigation}/>,
+    };
+};
 
 const AppNavigator = createStackNavigator(
   {
@@ -28,6 +54,7 @@ const AppNavigator = createStackNavigator(
   },
   {
     initialRouteName: 'Home',
+    navigationOptions,
   }
 );
 

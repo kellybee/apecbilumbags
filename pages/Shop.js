@@ -8,10 +8,7 @@ import {
 	View,
 	Image,
 } from "react-native";
-import {
-           appStyles,
-           appNavigationOptions,
-       } from '../styles/app';
+import appStyles from '../styles/app';
 import BilumStyles from '../data/BilumStyles';
 import {
     ImagePanel,
@@ -25,7 +22,7 @@ const styles = {
 };
 
 export default class Shop extends Component {
-static navigationOptions = { ...appNavigationOptions,
+static navigationOptions = {
     title: 'Shop for Bilum Originals',
   };
 	render() {

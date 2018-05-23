@@ -8,10 +8,7 @@ import {
 	View,
 	Image,
 } from "react-native";
-import {
-           appStyles,
-           appNavigationOptions,
-       } from '../styles/app';
+import appStyles  from '../styles/app';
 import WeaverData from '../data/Weavers';
 import {
     ImagePanel,
@@ -55,7 +52,6 @@ export default class WeaverProfile extends Component {
         const profile = WeaverData.find(item => item.id === params.id);
 
         return {
-          ...appNavigationOptions,
           title: 'Weaver Profile'
         }
       };
