@@ -14,7 +14,7 @@ export default class History extends Component {
 	render() {
 		return (
 			<View>
-				<Text>History</Text>
+				<Text>About Bilum. TODO: history, style and patterns</Text>
 				<Button
                                   title="Back"
                                   onPress={() => this.props.navigation.goBack()}

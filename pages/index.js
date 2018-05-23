@@ -1,9 +1,13 @@
 import Shop from './Shop';
-import History from './History';
+import AboutBilum from './AboutBilum';
 import Weavers from './Weavers';
+import WeaverProfile from './WeaverProfile';
+import Home from './Home';
 
 export {
+    Home,
     Shop,
-    History,
+    AboutBilum,
     Weavers,
+    WeaverProfile,
 }

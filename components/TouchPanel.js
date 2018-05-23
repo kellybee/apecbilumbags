@@ -16,13 +16,17 @@ const styles = {
         flex: 1,
         width: null,
         height: null,
-        margin: 5
+        margin: 5,
     },
     panelText: {
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 24,
+        fontSize: 26,
         margin: 10,
+        padding: 5,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        alignSelf: 'center',
+        justifyContent: 'center',
     }
 };
 
@@ -40,7 +44,7 @@ export default class TouchPanel extends Component {
                       style={styles.panelText} >
                       {text}
                   </Text>
-          </ImageBackground>
+            </ImageBackground>
            </View>
       </TouchableHighlight>
     );

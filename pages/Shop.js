@@ -14,11 +14,16 @@ export default class History extends Component {
 	render() {
 		return (
 			<View>
-				<Text>Shop</Text>
+				<Text>Shop TODO: filter for existing products. Links to custom bilim. Suggested items.</Text>
 				<Button
                                   title="Back"
                                   onPress={() => this.props.navigation.goBack()}
                                 />
+                <Button
+                                                  title="Back"
+                                                  onPress={() => this.props.navigation.goBack()}
+                                                />
+                <Text>TODO: Bilum results</Text>
 			</View>
 		);
 	}
