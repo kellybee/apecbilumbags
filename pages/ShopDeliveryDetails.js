@@ -21,6 +21,7 @@ import {
     StarRating,
 } from '../components';
 import * as Progress from 'react-native-progress';
+import DatePicker from 'react-native-datepicker'
 
 const styles = {
     ...appStyles,
@@ -60,8 +61,13 @@ const styles = {
 export default class ShopDeliveryDetails extends Component {
     static navigationOptions = {
         ...appNavigationOptions,
-        title: 'Order a Bilum Original',
+        title: 'Shop for Bilum Originals',
       };
+
+    constructor(props){
+        super(props)
+        this.state = {date:"01-05-2018"}
+      }
 
 	render() {
 	    //TODO: get weaver id from order
@@ -70,8 +76,32 @@ export default class ShopDeliveryDetails extends Component {
 
 		return (
 			<View style={styles.container}>
-			    <TextHeader text='Estimated delivery' />
-                <TextInput style={styles.textInput} />
+			    <TextHeader text='Estimated delivery (4-6 weeks are required for a custom Bilum)' />
+                <DatePicker
+                        style={{width: 200, backgroundColor: '#ccc'}}
+                        date={this.state.date}
+                        mode="date"
+                        placeholder="select date"
+                        format="DD-MM-YYYY"
+                        minDate="01-05-2018"
+                        maxDate="01-05-2025"
+                        confirmBtnText="Confirm"
+                        cancelBtnText="Cancel"
+                        customStyles={{
+                          dateIcon: {
+                            position: 'absolute',
+                            left: 0,
+                            top: 4,
+                            marginLeft: 0
+                          },
+                          dateInput: {
+                            marginLeft: 36
+                          },
+                          backgroundColor: '#ccc',
+                          margin: 10,
+                        }}
+                        onDateChange={(date) => {this.setState({date: date})}}
+                      />
                 <TextHeader text='Delivery details' />
                 <TextInput style={styles.textInput} />
 				<TextHeader text='Pattern and style' />
@@ -81,16 +111,11 @@ export default class ShopDeliveryDetails extends Component {
                 </View>
 				<TextHeader text='Your Weaver' />
                 <TextDescription text="Weavers will be contacted to accept your job and are expected to reply within 72 hours"/>
-                <View style={styles.row}>
-                    <Button
-                      title="Back"
-                      onPress={() => this.props.navigation.goBack()}
-                      style={{flex: 1, backgroundColor: '#ccc'}}
-                    />
+                <View style={{...styles.row, alignSelf: 'center'}}>
                     <Button
                       title="Order"
                       onPress={() => this.props.navigation.navigate('ShopConfirm')}
-                      style={{flex: 1, alignSelf: 'left'}}
+                      style={{flex: 1}}
                     />
                 </View>
 			</View>

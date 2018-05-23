@@ -56,7 +56,7 @@ export default class WeaverProfile extends Component {
 
         return {
           ...appNavigationOptions,
-          title: profile.name,
+          title: 'Weaver Profile'
         }
       };
 
@@ -76,6 +76,22 @@ export default class WeaverProfile extends Component {
                 </View>
                 <View>
                 <TextDescription text={weaver.description} />
+                </View>
+                <View>
+                <TextHeader text="Customer reviews" />
+                <StarRating text="High value weaver" ratingValue={5.0} />
+                <TextDescription text='Beautiful bag, I love it!' />
+
+                <StarRating text="High value weaver" ratingValue={4.0} />
+                <TextDescription text='You can really see how much work goes into these. Fantastic' />
+                </View>
+                <View>
+                    <TextHeader text="Mawi's bilums" />
+                    <View style={styles.row}>
+                        <ImagePanel text='' imgSrc={require('../assets/bilum-1.jpeg')} small />
+                        <ImagePanel text='' imgSrc={require('../assets/bilum-2.jpeg')} small />
+                        <ImagePanel text='' imgSrc={require('../assets/style-tulip.png')} small />
+                    </View>
                 </View>
 			</View>
 		);

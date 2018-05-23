@@ -14,6 +14,12 @@ import {
            appStyles,
            appNavigationOptions,
        } from '../styles/app';
+import {
+    ImagePanel,
+    TextHeader,
+    TextDescription,
+    StarRating,
+} from '../components';
 
 const styles = {
     ...appStyles,
@@ -44,7 +50,7 @@ const styles = {
 export default class Weavers extends Component {
     static navigationOptions = {
         ...appNavigationOptions,
-        title: 'WEAVERS',
+        title: 'Weavers',
       };
 
 	render() {
@@ -58,6 +64,7 @@ export default class Weavers extends Component {
                             <View style={styles.profileRow}>
                                 <Image source={item.imgSrc} style={styles.profileImg} />
                                 <Text style={styles.textName}>{item.name}</Text>
+                                <StarRating text="High value weaver" ratingValue={4.0} />
                                 <Text style={styles.textDescription}>{item.description}</Text>
                             </View>
 				        </TouchableHighlight>

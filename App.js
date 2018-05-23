@@ -7,6 +7,7 @@ import {
     Weavers,
     WeaverProfile,
     OrderStatus,
+    OrderFeedback,
     ShopPattern,
     ShopDeliveryDetails,
     ShopConfirm,
@@ -23,6 +24,7 @@ const AppNavigator = createStackNavigator(
     Weavers: Weavers,
     WeaverProfile: WeaverProfile,
     OrderStatus: OrderStatus,
+    OrderFeedback: OrderFeedback,
   },
   {
     initialRouteName: 'Home',

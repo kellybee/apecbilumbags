@@ -13,7 +13,7 @@ const styles = appStyles;
 
 class HomeScreen extends React.Component {
   static navigationOptions = { ...appNavigationOptions,
-    title: 'BILUM ORIGINALS',
+    title: 'Bilum Originals',
   };
   render() {
     return (
@@ -26,7 +26,7 @@ class HomeScreen extends React.Component {
                     imgSrc={require('../assets/weaver.png')}
                     text="Our weavers"/>
                 <TouchPanel
-                    navigateTo='OrderStatus'
+                    navigateTo='AboutBilum'
                     navigation={this.props.navigation}
                     imgSrc={require('../assets/bilum-2.jpeg')}
                     text="About Bilum"/>

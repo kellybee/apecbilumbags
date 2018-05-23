@@ -6,6 +6,7 @@ import {
 	Image,
 	TouchableHighlight,
 	StyleSheet,
+	Button,
 } from "react-native";
 import WeaverData from '../data/Weavers';
 import {
@@ -16,6 +17,7 @@ import {
     ImagePanel,
     TextHeader,
     TextDescription,
+    StarRating,
 } from '../components';
 import * as Progress from 'react-native-progress';
 
@@ -49,10 +51,10 @@ const styles = {
 };
 
 
-export default class ShopConfirm extends Component {
+export default class OrderFeedback extends Component {
     static navigationOptions = {
         ...appNavigationOptions,
-        title: 'Order Status',
+        title: 'Order Delivered',
       };
 
 	render() {
@@ -63,8 +65,8 @@ export default class ShopConfirm extends Component {
 		return (
 			<View style={styles.container}>
 			    <TextHeader text='Status' />
-                <TextDescription text="Task sent to weavers" />
-                <Progress.Bar progress={0.2} width={200} style={{marginBottom: 10}}/>
+                <TextDescription text="Delivered" />
+                <Progress.Bar progress={1.0} width={200} style={{marginBottom: 10}} />
                 <TextHeader text='Estimated delivery' />
                 <TextDescription text='29th June 2018' />
                 <TextHeader text='Delivery details' />
@@ -75,7 +77,27 @@ export default class ShopConfirm extends Component {
                     <ImagePanel text='Karkar' imgSrc={require('../assets/style-karkar.png')} small />
                 </View>
 				<TextHeader text='Your Weaver' />
-				<TextDescription text="Weavers have been contacted and will accept your job within 72 hours"/>
+				<TouchableHighlight key={weaver.id}
+                          onPress={() => this.props.navigation.navigate({routeName: 'WeaverProfile', params: { id: weaver.id } })}>
+                          <View style={styles.row}>
+                            <View>
+                                <Image source={weaver.imgSrc} style={styles.profileImg} />
+                            </View>
+                            <View>
+                                <TextDescription text={weaver.name} />
+                                <StarRating text="High value weaver" ratingValue={4.0} />
+                                <TextDescription text={weaver.shortDescription} />
+                            </View>
+                            <View style={{backgroundColor: '#ccc'}}>
+                                <TextDescription text='>' />
+                            </View>
+                          </View>
+                </TouchableHighlight>
+                <TextDescription text="Our weavers build their reputation on the rating and feedback of customers." />
+                <Button
+                  title="Give Feedback"
+                  onPress={() => this.props.navigation.goBack()}
+                />
 			</View>
 		);
 	}

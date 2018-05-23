@@ -53,7 +53,7 @@ const styles = {
 export default class OrderStatus extends Component {
     static navigationOptions = {
         ...appNavigationOptions,
-        title: 'ORDER STATUS',
+        title: 'Order Status',
       };
 
 	render() {

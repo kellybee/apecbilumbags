@@ -26,7 +26,7 @@ const styles = {
 
 export default class Shop extends Component {
 static navigationOptions = { ...appNavigationOptions,
-    title: 'Order a Bilum Original',
+    title: 'Shop for Bilum Originals',
   };
 	render() {
 		return (
