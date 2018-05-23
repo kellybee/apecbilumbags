@@ -74,7 +74,7 @@ export default class ShopDeliveryDetails extends Component {
 			<View style={styles.container}>
 			    <TextHeader text='Estimated delivery (4-6 weeks are required for a custom Bilum)' />
                 <DatePicker
-                        style={{width: 200, backgroundColor: '#ccc'}}
+                        style={{width: 200, backgroundColor: '#ccc', margin: 10 }}
                         date={this.state.date}
                         mode="date"
                         placeholder="select date"

@@ -40,6 +40,8 @@ const styles = {
     },
     profileRow: {
         borderColor: '#ccc',
+        margin: 10,
+        marginBottom: 30
     }
 };
 
@@ -61,7 +63,7 @@ export default class Weavers extends Component {
                                 <Image source={item.imgSrc} style={styles.profileImg} />
                                 <Text style={styles.textName}>{item.name}</Text>
                                 <StarRating text="High value weaver" ratingValue={4.0} />
-                                <Text style={styles.textDescription}>{item.description}</Text>
+                                <Text style={styles.textDescription}>{item.shortDescription}</Text>
                             </View>
 				        </TouchableHighlight>
 				    )

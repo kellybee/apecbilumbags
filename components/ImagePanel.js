@@ -25,6 +25,8 @@ const styles = {
         backgroundColor: 'rgba(0,0,0,0.5)',
         alignSelf: 'center',
         justifyContent: 'center',
+        textAlignVertical: 'center',
+        marginTop: 100
     },
     smallImgBackground: {
         width: 100,

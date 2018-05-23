@@ -52,10 +52,8 @@ export default class OrderFeedback extends Component {
     static navigationOptions = {
         title: 'Order Delivered',
       };
-
 	render() {
-	    //TODO: get weaver id from order
-        const weaverId = '1';
+	    const weaverId = '1';
         const weaver = WeaverData.find(item => item.id === '1');
 
 		return (

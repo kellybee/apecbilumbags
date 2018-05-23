@@ -20,12 +20,17 @@ class OrderStatusIcon extends React.Component {
         const orderId = '1';
         const order = Orders.find(item => item.id === orderId);
         const navTo = order.status === 'in_progress' ? 'OrderStatus' : 'OrderFeedback';
+
+        if (order.show_order === 'true') {
         return (
             <Button
                 title="1"
                 onPress={() => this.props.navigation.navigate(navTo)}
                  style={{marginRight: 5}}/>
         )
+        }
+
+        return (<Text></Text>);
     }
 }
 
