@@ -13,8 +13,41 @@ import {
            appNavigationOptions,
        } from '../styles/app';
 import WeaverData from '../data/Weavers';
+import {
+    ImagePanel,
+    TextHeader,
+    TextDescription,
+    StarRating,
+} from '../components';
 
-const styles = appStyles;
+const styles = {
+    ...appStyles,
+    textName: {
+        fontSize: 24,
+        color: '#fff',
+    },
+    textDescription: {
+        fontSize: 16,
+        color: '#fff',
+    },
+    profileImg: {
+        height: 100,
+        width: 100,
+        margin: 10,
+    },
+    textView: {
+        flex: 1,
+    },
+    imgView: {
+        flex: 1,
+    },
+    profileRow: {
+        borderColor: '#ccc',
+    },
+    row: {
+            flexDirection: 'row',
+        }
+};
 
 export default class WeaverProfile extends Component {
     static navigationOptions = ({ navigation }) => {
@@ -28,13 +61,22 @@ export default class WeaverProfile extends Component {
       };
 
 	render() {
+	    //TODO: get weaver id from order
+        const weaverId = '1';
+        const weaver = WeaverData.find(item => item.id === '1');
+
 		return (
-			<View>
-				<Text>Weaver Profile. TODO: weaver profile details from data. Link to products. Show ratings & reviews</Text>
-				<Button
-                                  title="Back"
-                                  onPress={() => this.props.navigation.goBack()}
-                                />
+			<View style={styles.container}>
+				<View>
+                <Image source={weaver.imgSrc} style={styles.profileImg} />
+                </View>
+                <View>
+                <TextDescription text={weaver.name} />
+                <StarRating text="High value weaver" ratingValue={4.0} />
+                </View>
+                <View>
+                <TextDescription text={weaver.description} />
+                </View>
 			</View>
 		);
 	}

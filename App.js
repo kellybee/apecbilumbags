@@ -6,13 +6,19 @@ import {
     AboutBilum,
     Weavers,
     WeaverProfile,
-    OrderStatus
+    OrderStatus,
+    ShopPattern,
+    ShopDeliveryDetails,
+    ShopConfirm,
     } from './pages/index';
 
 const AppNavigator = createStackNavigator(
   {
     Home: Home,
     Shop: Shop,
+    ShopPattern: ShopPattern,
+    ShopDeliveryDetails: ShopDeliveryDetails,
+    ShopConfirm: ShopConfirm,
     AboutBilum: AboutBilum,
     Weavers: Weavers,
     WeaverProfile: WeaverProfile,

@@ -6,6 +6,8 @@ import {
 	Image,
 	TouchableHighlight,
 	StyleSheet,
+	TextInput,
+	Button,
 } from "react-native";
 import WeaverData from '../data/Weavers';
 import {
@@ -46,14 +48,19 @@ const styles = {
     },
     row: {
             flexDirection: 'row',
-        }
+        },
+    textInput: {
+        backgroundColor: '#ccc',
+        borderColor: '#00cc00',
+        margin: 10,
+        padding: 5
+    }
 };
 
-
-export default class OrderStatus extends Component {
+export default class ShopDeliveryDetails extends Component {
     static navigationOptions = {
         ...appNavigationOptions,
-        title: 'ORDER STATUS',
+        title: 'Order a Bilum Original',
       };
 
 	render() {
@@ -63,35 +70,29 @@ export default class OrderStatus extends Component {
 
 		return (
 			<View style={styles.container}>
-			    <TextHeader text='Status' />
-                <TextDescription text="In progress with weaver" />
-                <Progress.Bar progress={0.6} width={200} style={{marginBottom: 10}} />
-                <TextHeader text='Estimated delivery' />
-                <TextDescription text='29th June 2018' />
+			    <TextHeader text='Estimated delivery' />
+                <TextInput style={styles.textInput} />
                 <TextHeader text='Delivery details' />
-                <TextDescription text='Hotel Grand Papua' />
+                <TextInput style={styles.textInput} />
 				<TextHeader text='Pattern and style' />
 				<View style={styles.row}>
                     <ImagePanel text='Snake' imgSrc={require('../assets/pattern-snake.png')} small />
                     <ImagePanel text='Karkar' imgSrc={require('../assets/style-karkar.png')} small />
                 </View>
 				<TextHeader text='Your Weaver' />
-				<TouchableHighlight key={weaver.id}
-                          onPress={() => this.props.navigation.navigate({routeName: 'WeaverProfile', params: { id: weaver.id } })}>
-                          <View style={styles.row}>
-                            <View>
-                                <Image source={weaver.imgSrc} style={styles.profileImg} />
-                            </View>
-                            <View>
-                                <TextDescription text={weaver.name} />
-                                <StarRating text="High value weaver" ratingValue={4.0} />
-                                <TextDescription text={weaver.shortDescription} />
-                            </View>
-                            <View style={{backgroundColor: '#ccc'}}>
-                                <TextDescription text='>' />
-                            </View>
-                          </View>
-                </TouchableHighlight>
+                <TextDescription text="Weavers will be contacted to accept your job and are expected to reply within 72 hours"/>
+                <View style={styles.row}>
+                    <Button
+                      title="Back"
+                      onPress={() => this.props.navigation.goBack()}
+                      style={{flex: 1, backgroundColor: '#ccc'}}
+                    />
+                    <Button
+                      title="Order"
+                      onPress={() => this.props.navigation.navigate('ShopConfirm')}
+                      style={{flex: 1, alignSelf: 'left'}}
+                    />
+                </View>
 			</View>
 		);
 	}

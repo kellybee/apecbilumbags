@@ -12,7 +12,7 @@ import {
            appStyles,
            appNavigationOptions,
        } from '../styles/app';
-import BilumStyles from '../data/BilumStyles';
+import BilumPatterns from '../data/BilumPatterns';
 import {
     ImagePanel,
     TextHeader,
@@ -24,7 +24,7 @@ const styles = {
     ...appStyles,
 };
 
-export default class Shop extends Component {
+export default class ShopPattern extends Component {
 static navigationOptions = { ...appNavigationOptions,
     title: 'Order a Bilum Original',
   };
@@ -33,10 +33,10 @@ static navigationOptions = { ...appNavigationOptions,
 			<View style={styles.container}>
 				<TextHeader text='Select a style' />
 				<View style={styles.quarterHeight}>
-                    {BilumStyles.map((item) => {
+                    {BilumPatterns.map((item) => {
                         return (<View style={styles.row} key={item.id}>
                             <TouchPanel key={item.id}
-                                navigateTo='ShopPattern'
+                                navigateTo='ShopDeliveryDetails'
                                 navigation={this.props.navigation}
                                 imgSrc={item.imgSrc}
                                 text={item.title}/>

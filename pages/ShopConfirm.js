@@ -16,7 +16,6 @@ import {
     ImagePanel,
     TextHeader,
     TextDescription,
-    StarRating,
 } from '../components';
 import * as Progress from 'react-native-progress';
 
@@ -50,7 +49,7 @@ const styles = {
 };
 
 
-export default class OrderStatus extends Component {
+export default class ShopConfirm extends Component {
     static navigationOptions = {
         ...appNavigationOptions,
         title: 'ORDER STATUS',
@@ -64,8 +63,8 @@ export default class OrderStatus extends Component {
 		return (
 			<View style={styles.container}>
 			    <TextHeader text='Status' />
-                <TextDescription text="In progress with weaver" />
-                <Progress.Bar progress={0.6} width={200} style={{marginBottom: 10}} />
+                <TextDescription text="Task sent to weavers" />
+                <Progress.Bar progress={0.2} width={200} style={{marginBottom: 10}}/>
                 <TextHeader text='Estimated delivery' />
                 <TextDescription text='29th June 2018' />
                 <TextHeader text='Delivery details' />
@@ -76,22 +75,7 @@ export default class OrderStatus extends Component {
                     <ImagePanel text='Karkar' imgSrc={require('../assets/style-karkar.png')} small />
                 </View>
 				<TextHeader text='Your Weaver' />
-				<TouchableHighlight key={weaver.id}
-                          onPress={() => this.props.navigation.navigate({routeName: 'WeaverProfile', params: { id: weaver.id } })}>
-                          <View style={styles.row}>
-                            <View>
-                                <Image source={weaver.imgSrc} style={styles.profileImg} />
-                            </View>
-                            <View>
-                                <TextDescription text={weaver.name} />
-                                <StarRating text="High value weaver" ratingValue={4.0} />
-                                <TextDescription text={weaver.shortDescription} />
-                            </View>
-                            <View style={{backgroundColor: '#ccc'}}>
-                                <TextDescription text='>' />
-                            </View>
-                          </View>
-                </TouchableHighlight>
+				<TextDescription text="Weavers have been contacted and will accept your job within 72 hours"/>
 			</View>
 		);
 	}

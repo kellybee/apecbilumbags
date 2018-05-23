@@ -31,6 +31,9 @@ const appStyles = {
         flexDirection: 'column',
         backgroundColor: '#000'
     },
+    halfHeight: {
+            flex: 2,
+    },
     quarterHeight: {
         flex: 1,
     },

@@ -35,8 +35,8 @@ class HomeScreen extends React.Component {
         <TouchPanel
             navigateTo='Shop'
             navigation={this.props.navigation}
-            imgSrc={require('../assets/bilum-3.jpeg')}
-            text="Shop"/>
+            imgSrc={require('../assets/bilum-4.jpg')}
+            text="Shop for Bilum Originals"/>
 	</View>
     );
   }
