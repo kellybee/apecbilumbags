@@ -28,7 +28,7 @@ static navigationOptions = {
 	render() {
 		return (
 			<View style={styles.container}>
-				<TextHeader text='Select a style' />
+				<TextDescription text='Select a pattern' />
 				<View style={styles.quarterHeight}>
                     {BilumPatterns.map((item) => {
                         return (<View style={styles.row} key={item.id}>

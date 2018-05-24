@@ -22,13 +22,13 @@ const styles = {
 };
 
 export default class Shop extends Component {
-static navigationOptions = {
-    title: 'Shop for Bilum Originals',
-  };
+    static navigationOptions = {
+        title: 'Shop for Bilum Originals',
+    };
 	render() {
 		return (
 			<View style={styles.container}>
-				<TextHeader text='Select a style' />
+				<TextDescription text='Select a style' />
 				<View style={styles.quarterHeight}>
                     {BilumStyles.map((item) => {
                         return (<View style={styles.row} key={item.id}>

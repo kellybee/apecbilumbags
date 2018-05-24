@@ -50,7 +50,6 @@ export default class Weavers extends Component {
     static navigationOptions = {
         title: 'Weavers',
       };
-
 	render() {
 		return (
 			<View style={styles.container}>

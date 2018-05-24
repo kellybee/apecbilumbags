@@ -34,13 +34,13 @@ export default class AboutBilum extends Component {
                 </View>
                 <View style={styles.row}>
                     <Text style={{
-                                        color: '#fff',
-                                        fontSize: 20,
-                                        padding: 5,
-                                        fontStyle: 'italic',
-                                        textAlign: 'center',
-                                        textAlignVertical: 'center'
-                                    }}>The beautiful woven bags empowering women and their families in PNG.</Text>
+                        color: '#fff',
+                        fontSize: 20,
+                        padding: 5,
+                        fontStyle: 'italic',
+                        textAlign: 'center',
+                        textAlignVertical: 'center'
+                    }}>The beautiful woven bags empowering women and their families in PNG.</Text>
                 </View>
                 <View style={styles.row}>
                     <TextDescription text='The bilum, almost exclusively made by women, is a beautiful and unique traditional hand-woven bag. Each multi-purpose bilum has both cultural significance and serves functional needs for the women of Papua New Guinea. The making of these bags is handed down via oral traditions stretching back over 20,000 years.' />

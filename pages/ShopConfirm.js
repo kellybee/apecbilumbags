@@ -50,7 +50,6 @@ export default class ShopConfirm extends Component {
     static navigationOptions = {
         title: 'Order Status',
       };
-
 	render() {
 	    //TODO: get weaver id from order
         const weaverId = '1';
@@ -58,6 +57,7 @@ export default class ShopConfirm extends Component {
 
 		return (
 			<View style={styles.container}>
+			    <TextDescription text='Confirmation' />
 			    <TextHeader text='Status' />
                 <TextDescription text="Task sent to weavers" />
                 <Progress.Bar progress={0.2} width={200} style={{marginBottom: 10}}/>
